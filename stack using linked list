@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+int data;
+struct node *next;
+};
+struct node *top=NULL;
+int main(){
+int ch=0;
+int item,pos;
+while(1)
+{
+printf("1.push 2.pop 3.display 4.exit\n");
+printf("Enter the choice");
+scanf("%d",&ch);
+switch(ch){
+case 1:printf("Enter");
+       scanf("%d",&item);
+       push(item);
+       break;
+case 2:pop();
+       break;
+case 3:display();
+       break;
+case 4:exit(0);
+}}
+return 0;
+}
+void push(item){
+struct node *newnode=(struct node*)malloc(sizeof(struct node));
+newnode->data=item;
+newnode->next=NULL;
+if(top==NULL){
+top=newnode;
+}
+else{
+newnode->next=top;
+top=newnode;
+}}
+void pop(){
+if(top=NULL){
+printf("stack is underflow\n");
+}
+else{
+struct node *temp=(struct node*)malloc(sizeof(struct node));
+temp=top->next;
+top->next=NULL;
+top=temp;
+}}
+void display(){
+int i;
+struct node *current=top;
+while(current!=NULL){
+printf("%5d\t",current->data);
+printf("\n");
+current=current->next;
+}}
+
+OUTPUT:
+1.push 2.pop 3.display 4.exit
+Enter the choice1
+Enter31
+1.push 2.pop 3.display 4.exit
+Enter the choice1
+Enter18
+1.push 2.pop 3.display 4.exit
+Enter the choice1 
+Enter33
+1.push 2.pop 3.display 4.exit
+Enter the choice3
+   33	
+   18	
+   31	
+1.push 2.pop 3.display 4.exit
+Enter the choice4
