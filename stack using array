@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 5
+int a[max];
+int top=-1;
+int main()
+{
+int ch=0;
+int item,pos;
+while (ch!=4){
+printf("1.push 2.pop 3.display 4.exit \n");
+printf("enter choice");
+scanf("%d",&ch);
+switch(ch){
+case 1:printf("enter the element");
+       scanf("%d",&item);
+       push(item);
+       break;
+case 2:pop();
+       break;
+case 3:display();
+       break;
+case 4:exit(0);
+}}
+return 0;
+}
+void push(item)
+{
+if (top==max-1)
+{
+printf("stack overflow\n");
+}
+else{
+top=top+1;
+a[top]=item;
+}}
+void pop(){
+if(top==-1)
+{
+printf("stack underflow\n");
+}
+else{
+int x;
+x=a[top];
+top--;
+printf("%d is deleted\n");
+}}
+void display()
+{
+int i;
+for(i=top;i>=0;i--)
+{
+printf("%5d",a[i]);
+}
+printf("\n");
+}
+
+OUTPUT:
+1.push 2.pop 3.display 4.exit 
+enter choice1
+enter the element21
+1.push 2.pop 3.display 4.exit 
+enter choice1
+enter the element44  
+1.push 2.pop 3.display 4.exit 
+enter choice1
+enter the element33
+1.push 2.pop 3.display 4.exit 
+enter choice3
+   33   44   21
+1.push 2.pop 3.display 4.exit 
+enter choice4
